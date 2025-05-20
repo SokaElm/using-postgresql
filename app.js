@@ -1,8 +1,9 @@
 // app.js
 const express = require("express");
+require("dotenv").config();
+const pool = require("./db/pool");
 const app = express();
 const router = require("./routes/Router");
-require("dotenv").config();
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));

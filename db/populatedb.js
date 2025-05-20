@@ -19,7 +19,6 @@ async function main() {
   console.log("seeding...");
   const client = new Client({
     connectionString: process.argv[2],
-    //    "postgresql://Soukaina:<role_password>@localhost:5432/top_users"
   });
   await client.connect();
   await client.query(SQL);
