@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <% if (errors && errors.length > 0) { %>
+    <ul>
+      <% errors.forEach(error => { %>
+      <li><%= error.msg %></li>
+      <% }) %>
+    </ul>
+    <% } %>
+    <form action="/search" method="GET">
+      <label for="email">Email: </label>
+      <input type="email" name="email" id="email" required />
+      <button type="submit">Search</button>
+    </form>
+
+    <% if (user) { %>
+    <ul>
+      <li>First Name: <%= user.firstName %></li>
+      <li>Last Name: <%= user.lastName %></li>
+      <li>Email: <%= user.email %></li>
+      <li>Age: <%= user.age %></li>
+      <li>Bio: <%= user.bio %></li>
+    </ul>
+    <% } %>
+    <a href="/">Back to home</a>
+  </body>
+</html>
